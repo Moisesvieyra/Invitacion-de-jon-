@@ -1322,3 +1322,368 @@ body::after {
   background: rgba(255, 248, 234, 0.70) !important;
   border: 1px solid rgba(201, 155, 69, 0.42) !important;
 }
+/* =========================================================
+   33. OPTIMIZACIÓN PREMIUM PARA CELULAR
+   Esta sección trabaja junto con el JS optimizado.
+   Cuando el JS detecta celular, agrega body.premium-lite.
+   Resultado: misma estética elegante, menos trabones.
+========================================================= */
+
+@media (max-width: 760px), (pointer: coarse) {
+  :root {
+    --lux-shadow-deep: 0 18px 48px rgba(0, 0, 0, 0.34);
+    --lux-shadow-card: 0 14px 34px rgba(7, 25, 54, 0.14);
+    --lux-shadow-soft: 0 8px 22px rgba(7, 25, 54, 0.10);
+    --lux-shadow-gold: 0 0 18px rgba(216, 173, 85, 0.20);
+  }
+
+  html,
+  body {
+    overscroll-behavior-y: none;
+  }
+
+  body {
+    text-rendering: auto;
+  }
+
+  body::before,
+  body::after {
+    animation: none !important;
+    opacity: 0.08 !important;
+  }
+
+  body.premium-lite::before,
+  body.premium-lite::after {
+    display: none !important;
+  }
+
+  .page {
+    background:
+      radial-gradient(
+        circle at 50% 0%,
+        rgba(244, 216, 146, 0.14),
+        transparent 34%
+      ),
+      linear-gradient(
+        180deg,
+        var(--lux-navy-950),
+        var(--lux-navy-900)
+      ) !important;
+  }
+
+  .page::before,
+  .page::after,
+  .stage::before,
+  .stage::after {
+    display: none !important;
+  }
+
+  .stage {
+    isolation: auto;
+    perspective: none !important;
+  }
+
+  .invitation,
+  .invite-card {
+    transform: none !important;
+    transform-style: flat !important;
+    will-change: auto !important;
+    contain: paint;
+    border-radius: 26px !important;
+    background:
+      radial-gradient(
+        circle at 50% 0%,
+        rgba(255, 255, 255, 0.92),
+        transparent 28%
+      ),
+      linear-gradient(
+        180deg,
+        var(--lux-cream-50),
+        var(--lux-cream-100) 45%,
+        var(--lux-cream-200)
+      ) !important;
+    box-shadow:
+      0 18px 48px rgba(0, 0, 0, 0.34),
+      inset 0 0 0 4px rgba(201, 155, 69, 0.10) !important;
+  }
+
+  .invitation::before,
+  .invite-card::before {
+    inset: 10px !important;
+    border-width: 1px !important;
+    box-shadow: none !important;
+  }
+
+  .invitation::after,
+  .invite-card::after {
+    display: none !important;
+  }
+
+  .paper-grain {
+    opacity: 0.08 !important;
+  }
+
+  .gold-noise,
+  .card-foil,
+  .sparkles,
+  .spark,
+  .confetti,
+  .mini-ball,
+  .stadium-lines {
+    display: none !important;
+    animation: none !important;
+  }
+
+  .corner::before,
+  .corner::after,
+  .top-flourish .center,
+  .side-leaves,
+  .graduation-visual,
+  .party-visual,
+  .academic-gown,
+  .cap,
+  .extra-cap-top,
+  .tassel,
+  .extra-cap-tassel,
+  .gown-collar,
+  .diploma-front,
+  .diploma-back,
+  .diploma,
+  .seal,
+  .mini-medal .medal,
+  .soccer-medal,
+  .jersey {
+    filter: none !important;
+  }
+
+  .invitation > .content::before,
+  .invitation > .content::after,
+  .invite-card > .main-content::before,
+  .invite-card > .main-content::after {
+    display: none !important;
+  }
+
+  .headline {
+    text-shadow:
+      0 1px 0 rgba(255, 245, 208, 0.50),
+      0 8px 18px rgba(7, 25, 54, 0.10) !important;
+  }
+
+  .headline::after {
+    opacity: 0.44;
+  }
+
+  .main-title .cumple,
+  .title-word.cumple,
+  .main-title .sec,
+  .title-word.sec,
+  .main-message,
+  .message,
+  .achievement-header,
+  .achievement-copy {
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.55) !important;
+  }
+
+  .main-title .grad,
+  .title-word.grad {
+    filter: none !important;
+  }
+
+  .amp,
+  .date-badge,
+  .time-badge,
+  .class-badge,
+  .badge,
+  .location-label,
+  .rsvp-icon,
+  .rsvp .icon,
+  .toolbar,
+  .toolbar a,
+  .toolbar button {
+    box-shadow:
+      0 8px 18px rgba(7, 25, 54, 0.14),
+      inset 0 1px 0 rgba(255, 255, 255, 0.10) !important;
+  }
+
+  .detail-card,
+  .detail-chip,
+  .highlight-pill,
+  .achievement-panel,
+  .location-card,
+  .rsvp,
+  .rsvp-card,
+  .premium-mini-action,
+  .premium-countdown__item {
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+    box-shadow:
+      inset 0 0 0 3px rgba(201, 155, 69, 0.045),
+      0 8px 18px rgba(7, 25, 54, 0.08) !important;
+    transition:
+      border-color 180ms ease,
+      background 180ms ease,
+      opacity 180ms ease !important;
+  }
+
+  .detail-card:hover,
+  .detail-chip:hover,
+  .highlight-pill:hover,
+  .btn:hover,
+  .button:hover,
+  .premium-mini-action:hover,
+  .soccer-medal:hover {
+    transform: none !important;
+    filter: none !important;
+  }
+
+  .detail-card .icon,
+  .detail-chip span {
+    filter: none !important;
+  }
+
+  .location-icon::after {
+    animation: none !important;
+    opacity: 0.45 !important;
+  }
+
+  .location-card {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(255, 253, 247, 0.92),
+        rgba(255, 248, 234, 0.96)
+      ) !important;
+  }
+
+  .location-card::after {
+    text-shadow: none !important;
+  }
+
+  .btn,
+  .button,
+  .premium-mini-action {
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+
+  .btn::before,
+  .button::before,
+  .premium-countdown__item::before {
+    animation: none !important;
+    display: none !important;
+  }
+
+  .btn,
+  .button {
+    box-shadow:
+      0 8px 18px rgba(7, 25, 54, 0.12),
+      inset 0 1px 0 rgba(255, 255, 255, 0.12) !important;
+  }
+
+  .balloon,
+  .soccer-medal,
+  .highlight-pill,
+  .detail-card,
+  .detail-chip,
+  .btn,
+  .button {
+    transition-duration: 160ms !important;
+  }
+
+  .candle::before {
+    animation: none !important;
+    filter: drop-shadow(0 0 6px rgba(255, 209, 90, 0.52)) !important;
+  }
+
+  .gown-body,
+  .cap,
+  .extra-cap-top,
+  .seal,
+  .mini-medal .medal,
+  .soccer-ball {
+    box-shadow:
+      inset 0 0 0 1px rgba(255, 255, 255, 0.07),
+      0 6px 14px rgba(7, 25, 54, 0.10) !important;
+  }
+
+  .leaf {
+    box-shadow: none !important;
+  }
+
+  .premium-modal__panel {
+    box-shadow:
+      0 18px 44px rgba(0, 0, 0, 0.34),
+      inset 0 0 0 4px rgba(201, 155, 69, 0.08) !important;
+  }
+
+  .premium-progress {
+    height: 3px !important;
+    box-shadow: none !important;
+  }
+
+  .toolbar {
+    filter: none !important;
+  }
+}
+
+/* Modo ligero activado por el JS optimizado */
+body.premium-lite .premium-particle-canvas,
+body.premium-lite .premium-cursor-glow,
+body.premium-lite .premium-floating-symbol,
+body.premium-lite .card-foil,
+body.premium-lite .gold-noise,
+body.premium-lite .sparkles,
+body.premium-lite .spark,
+body.premium-lite .confetti,
+body.premium-lite .mini-ball {
+  display: none !important;
+  animation: none !important;
+}
+
+body.premium-lite .invitation,
+body.premium-lite .invite-card,
+body.premium-lite .location-card,
+body.premium-lite .achievement-panel,
+body.premium-lite .detail-card,
+body.premium-lite .detail-chip,
+body.premium-lite .highlight-pill,
+body.premium-lite .rsvp,
+body.premium-lite .rsvp-card,
+body.premium-lite .premium-mini-action,
+body.premium-lite .premium-countdown__item {
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+  will-change: auto !important;
+}
+
+body.premium-lite .graduation-visual,
+body.premium-lite .party-visual,
+body.premium-lite .side-leaves,
+body.premium-lite .soccer-medal,
+body.premium-lite .jersey,
+body.premium-lite .diploma,
+body.premium-lite .cap,
+body.premium-lite .tassel {
+  filter: none !important;
+}
+
+body.premium-lite .premium-countdown__item::before,
+body.premium-lite .btn::before,
+body.premium-lite .button::before,
+body.premium-lite .location-icon::after,
+body.premium-lite .candle::before {
+  animation: none !important;
+}
+
+body.premium-lite .btn:hover,
+body.premium-lite .button:hover,
+body.premium-lite .detail-card:hover,
+body.premium-lite .detail-chip:hover,
+body.premium-lite .highlight-pill:hover,
+body.premium-lite .premium-mini-action:hover {
+  transform: none !important;
+}
+
+body.premium-lite * {
+  scroll-behavior: auto !important;
+}
