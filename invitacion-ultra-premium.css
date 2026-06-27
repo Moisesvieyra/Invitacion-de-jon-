@@ -1,0 +1,1324 @@
+/* =========================================================
+   invitacion-ultra-premium.css
+   Complemento visual premium para la invitación de:
+   Jonatan Vieyra Chalé
+   Cumpleaños & Graduación de Secundaria
+
+   Uso:
+   1) Guarda este archivo como invitacion-ultra-premium.css
+   2) Ponlo en la misma carpeta que tu HTML
+   3) En tu HTML, dentro de <head>, DESPUÉS de tu <style> principal, agrega:
+      <link rel="stylesheet" href="./invitacion-ultra-premium.css">
+========================================================= */
+
+/* =========================================================
+   01. TOKENS PREMIUM
+========================================================= */
+
+:root {
+  --lux-navy-1000: #01040c;
+  --lux-navy-950: #020816;
+  --lux-navy-900: #06142d;
+  --lux-navy-850: #071936;
+  --lux-navy-800: #0b2147;
+  --lux-navy-700: #113268;
+  --lux-navy-600: #1b4485;
+
+  --lux-gold-950: #4d320d;
+  --lux-gold-900: #76511d;
+  --lux-gold-800: #9b7130;
+  --lux-gold-700: #b98a38;
+  --lux-gold-600: #c99b45;
+  --lux-gold-500: #d8ad55;
+  --lux-gold-400: #e8c978;
+  --lux-gold-300: #f4d892;
+  --lux-gold-200: #ffe8aa;
+  --lux-gold-100: #fff5d0;
+
+  --lux-cream-50: #fffdf7;
+  --lux-cream-100: #fff8ea;
+  --lux-cream-150: #fff5e2;
+  --lux-cream-200: #fff2dc;
+  --lux-cream-300: #f7e4c4;
+
+  --lux-ink: #06142d;
+  --lux-muted: #6f6048;
+
+  --lux-font-script: "Great Vibes", cursive;
+  --lux-font-serif: "Playfair Display", Georgia, serif;
+  --lux-font-cinzel: "Cinzel", Georgia, serif;
+  --lux-font-sans: "Montserrat", Arial, sans-serif;
+
+  --lux-shadow-deep: 0 42px 140px rgba(0, 0, 0, 0.58);
+  --lux-shadow-card: 0 28px 80px rgba(7, 25, 54, 0.26);
+  --lux-shadow-soft: 0 16px 40px rgba(7, 25, 54, 0.14);
+  --lux-shadow-gold: 0 0 36px rgba(216, 173, 85, 0.35);
+  --lux-shadow-glass: inset 0 1px 0 rgba(255, 255, 255, 0.45);
+
+  --lux-radius-xxl: 42px;
+  --lux-radius-xl: 32px;
+  --lux-radius-lg: 26px;
+  --lux-radius-md: 18px;
+
+  --lux-outline: rgba(201, 155, 69, 0.78);
+  --lux-outline-soft: rgba(201, 155, 69, 0.34);
+}
+
+/* =========================================================
+   02. RESET VISUAL SUAVE
+========================================================= */
+
+html {
+  background: var(--lux-navy-1000);
+}
+
+body {
+  color: var(--lux-ink);
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body::before {
+  opacity: 0.26;
+}
+
+body::after {
+  opacity: 0.16;
+}
+
+/* =========================================================
+   03. FONDO DE GALA
+========================================================= */
+
+.page {
+  background:
+    radial-gradient(
+      circle at 12% 10%,
+      rgba(244, 216, 146, 0.18),
+      transparent 23%
+    ),
+    radial-gradient(
+      circle at 88% 14%,
+      rgba(255, 248, 234, 0.11),
+      transparent 22%
+    ),
+    radial-gradient(
+      circle at 70% 90%,
+      rgba(27, 68, 133, 0.30),
+      transparent 36%
+    );
+}
+
+.page::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.11;
+  background-image:
+    linear-gradient(
+      30deg,
+      rgba(255, 255, 255, 0.06) 12%,
+      transparent 12%,
+      transparent 50%,
+      rgba(255, 255, 255, 0.06) 50%,
+      rgba(255, 255, 255, 0.06) 62%,
+      transparent 62%,
+      transparent 100%
+    );
+  background-size: 72px 72px;
+}
+
+.page::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.42;
+  background:
+    radial-gradient(
+      ellipse at top,
+      transparent 0 38%,
+      rgba(1, 4, 12, 0.18) 66%,
+      rgba(1, 4, 12, 0.56) 100%
+    );
+}
+
+/* =========================================================
+   04. ESCENARIO Y TARJETA PRINCIPAL
+========================================================= */
+
+.stage {
+  position: relative;
+  isolation: isolate;
+}
+
+.stage::before {
+  content: "";
+  position: absolute;
+  inset: -28px;
+  z-index: -2;
+  border-radius: calc(var(--lux-radius-xxl) + 36px);
+  background:
+    linear-gradient(
+      135deg,
+      rgba(244, 216, 146, 0.34),
+      rgba(7, 25, 54, 0.0) 32%,
+      rgba(244, 216, 146, 0.22) 68%,
+      rgba(255, 245, 208, 0.34)
+    );
+  filter: blur(18px);
+  opacity: 0.78;
+}
+
+.stage::after {
+  content: "";
+  position: absolute;
+  left: 8%;
+  right: 8%;
+  bottom: -34px;
+  z-index: -3;
+  height: 70px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.42);
+  filter: blur(26px);
+}
+
+.invitation,
+.invite-card {
+  border-radius: var(--lux-radius-xxl) !important;
+  border-color: var(--lux-gold-600) !important;
+  box-shadow:
+    var(--lux-shadow-deep),
+    inset 0 0 0 8px rgba(201, 155, 69, 0.15),
+    inset 0 0 120px rgba(255, 245, 208, 0.18),
+    inset 0 -80px 130px rgba(201, 155, 69, 0.08) !important;
+  background:
+    radial-gradient(
+      circle at 50% 5%,
+      rgba(255, 255, 255, 0.98),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 15% 18%,
+      rgba(244, 216, 146, 0.22),
+      transparent 25%
+    ),
+    radial-gradient(
+      circle at 87% 23%,
+      rgba(201, 155, 69, 0.18),
+      transparent 25%
+    ),
+    linear-gradient(
+      180deg,
+      var(--lux-cream-50),
+      var(--lux-cream-100) 38%,
+      var(--lux-cream-150) 69%,
+      var(--lux-cream-200)
+    ) !important;
+}
+
+.invitation::before,
+.invite-card::before {
+  inset: 16px !important;
+  border-width: 1.5px !important;
+  border-color: rgba(201, 155, 69, 0.86) !important;
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.26),
+    inset 0 0 34px rgba(201, 155, 69, 0.10);
+}
+
+.invitation::after,
+.invite-card::after {
+  inset: 32px !important;
+  border-color: rgba(7, 25, 54, 0.12) !important;
+}
+
+/* =========================================================
+   05. MARCO LATERAL TIPO INVITACIÓN DE LUJO
+========================================================= */
+
+.invitation .lux-side-rail,
+.invite-card .lux-side-rail {
+  display: none;
+}
+
+.invitation {
+  --rail-offset: 45px;
+}
+
+.invitation > .content::before,
+.invite-card > .main-content::before {
+  content: "";
+  position: absolute;
+  top: -12px;
+  bottom: -18px;
+  left: 36px;
+  width: 1px;
+  background:
+    linear-gradient(
+      transparent,
+      rgba(201, 155, 69, 0.34) 10%,
+      rgba(201, 155, 69, 0.74) 50%,
+      rgba(201, 155, 69, 0.34) 90%,
+      transparent
+    );
+  opacity: 0.68;
+  pointer-events: none;
+}
+
+.invitation > .content::after,
+.invite-card > .main-content::after {
+  content: "";
+  position: absolute;
+  top: -12px;
+  bottom: -18px;
+  right: 36px;
+  width: 1px;
+  background:
+    linear-gradient(
+      transparent,
+      rgba(201, 155, 69, 0.34) 10%,
+      rgba(201, 155, 69, 0.74) 50%,
+      rgba(201, 155, 69, 0.34) 90%,
+      transparent
+    );
+  opacity: 0.68;
+  pointer-events: none;
+}
+
+/* =========================================================
+   06. CORNERS MÁS PREMIUM
+========================================================= */
+
+.corner::before {
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.20),
+    0 0 18px rgba(216, 173, 85, 0.20);
+}
+
+.corner::after {
+  opacity: 0.78;
+}
+
+.corner.top-left::before,
+.corner.top-right::before,
+.corner.bottom-left::before,
+.corner.bottom-right::before {
+  border-color: rgba(185, 138, 56, 0.96);
+}
+
+/* =========================================================
+   07. ORNAMENTOS SUPERIORES
+========================================================= */
+
+.top-flourish .center {
+  filter: drop-shadow(0 0 14px rgba(216, 173, 85, 0.25));
+}
+
+.top-flourish::before,
+.top-flourish::after {
+  height: 2px;
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(185, 138, 56, 0.72),
+      rgba(255, 232, 170, 0.90),
+      rgba(185, 138, 56, 0.72),
+      transparent
+    ) !important;
+}
+
+/* =========================================================
+   08. TIPOGRAFÍA HERO
+========================================================= */
+
+.headline {
+  position: relative;
+  color: var(--lux-navy-850) !important;
+  text-shadow:
+    0 2px 0 rgba(255, 245, 208, 0.52),
+    0 6px 0 rgba(201, 155, 69, 0.09),
+    0 22px 46px rgba(7, 25, 54, 0.14) !important;
+}
+
+.headline::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -12px;
+  width: min(360px, 70%);
+  height: 1px;
+  transform: translateX(-50%);
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(201, 155, 69, 0.70),
+      transparent
+    );
+  opacity: 0.62;
+}
+
+.subtitle {
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.68);
+}
+
+.name-kicker {
+  position: relative;
+  width: fit-content;
+  padding: 8px 18px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.42);
+  border: 1px solid rgba(201, 155, 69, 0.30);
+  box-shadow:
+    inset 0 0 0 3px rgba(201, 155, 69, 0.04),
+    0 8px 20px rgba(7, 25, 54, 0.05);
+}
+
+.name-kicker strong {
+  color: var(--lux-navy-850);
+}
+
+/* =========================================================
+   09. TÍTULOS CUMPLEAÑOS Y GRADUACIÓN
+========================================================= */
+
+.main-title {
+  position: relative;
+}
+
+.main-title .cumple,
+.title-word.cumple {
+  text-shadow:
+    0 2px 0 rgba(255, 255, 255, 0.82),
+    0 15px 32px rgba(7, 25, 54, 0.10);
+}
+
+.main-title .grad,
+.title-word.grad {
+  background:
+    linear-gradient(
+      180deg,
+      var(--lux-navy-950),
+      var(--lux-navy-700) 46%,
+      var(--lux-navy-950)
+    );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent !important;
+  filter: drop-shadow(0 10px 15px rgba(7, 25, 54, 0.10));
+}
+
+.main-title .sec,
+.title-word.sec {
+  text-shadow:
+    0 2px 0 rgba(255, 255, 255, 0.66),
+    0 10px 18px rgba(7, 25, 54, 0.08);
+}
+
+.amp {
+  position: relative;
+  box-shadow:
+    inset 0 0 0 1px rgba(201, 155, 69, 0.35),
+    inset 0 12px 24px rgba(255, 255, 255, 0.30),
+    0 16px 30px rgba(7, 25, 54, 0.08);
+}
+
+.amp::after {
+  content: "";
+  position: absolute;
+  inset: 8px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 245, 208, 0.66);
+  pointer-events: none;
+}
+
+.amp-line::before,
+.amp-line::after {
+  height: 2px !important;
+}
+
+/* =========================================================
+   10. LÍNEAS Y DIVISORES
+========================================================= */
+
+.divider {
+  height: 2px !important;
+  opacity: 0.94;
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(118, 81, 29, 0.22),
+      rgba(244, 216, 146, 0.94),
+      rgba(118, 81, 29, 0.22),
+      transparent
+    ) !important;
+}
+
+.divider::before {
+  width: 14px !important;
+  height: 14px !important;
+  background:
+    linear-gradient(
+      135deg,
+      var(--lux-gold-800),
+      var(--lux-gold-300),
+      var(--lux-gold-800)
+    ) !important;
+}
+
+/* =========================================================
+   11. TARJETAS DE DETALLE
+========================================================= */
+
+.detail-grid {
+  position: relative;
+  z-index: 5;
+}
+
+.detail-card,
+.detail-chip {
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  border-color: rgba(201, 155, 69, 0.50) !important;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.74),
+      rgba(255, 248, 234, 0.88)
+    ) !important;
+  transition:
+    transform 260ms ease,
+    box-shadow 260ms ease,
+    border-color 260ms ease,
+    background 260ms ease;
+}
+
+.detail-card:hover,
+.detail-chip:hover {
+  transform: translateY(-4px);
+  border-color: rgba(201, 155, 69, 0.76) !important;
+  box-shadow:
+    inset 0 0 0 4px rgba(201, 155, 69, 0.07),
+    0 16px 30px rgba(7, 25, 54, 0.12) !important;
+}
+
+.detail-card .icon,
+.detail-chip span {
+  filter: drop-shadow(0 8px 8px rgba(7, 25, 54, 0.10));
+}
+
+.detail-card strong,
+.detail-chip strong {
+  color: var(--lux-navy-850);
+}
+
+.detail-card small {
+  opacity: 0.86;
+}
+
+/* =========================================================
+   12. BADGES DE FECHA, HORA Y CLASE
+========================================================= */
+
+.date-badge,
+.time-badge,
+.class-badge,
+.badge {
+  position: relative;
+  isolation: isolate;
+  border-color: var(--lux-gold-600) !important;
+  background:
+    radial-gradient(
+      circle at 30% 0%,
+      rgba(255, 255, 255, 0.14),
+      transparent 34%
+    ),
+    linear-gradient(
+      135deg,
+      var(--lux-navy-1000),
+      var(--lux-navy-800) 52%,
+      var(--lux-navy-1000)
+    ) !important;
+  box-shadow:
+    0 14px 30px rgba(7, 25, 54, 0.25),
+    inset 0 0 0 2px rgba(255, 255, 255, 0.06),
+    inset 0 16px 28px rgba(255, 255, 255, 0.05) !important;
+}
+
+.date-badge::before,
+.time-badge::before,
+.class-badge::before,
+.badge::before {
+  content: "";
+  position: absolute;
+  inset: 5px;
+  z-index: -1;
+  border-radius: inherit;
+  border: 1px solid rgba(255, 232, 170, 0.20);
+  pointer-events: none;
+}
+
+.date-badge {
+  letter-spacing: 0.3px;
+}
+
+.time-badge {
+  letter-spacing: 0.2px;
+}
+
+/* =========================================================
+   13. MENSAJES CENTRALES
+========================================================= */
+
+.honor-line,
+.main-message,
+.message,
+.warm-note,
+.special-note {
+  position: relative;
+  z-index: 4;
+}
+
+.honor-line {
+  padding-inline: 12px;
+}
+
+.main-message,
+.message {
+  text-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.68),
+    0 10px 18px rgba(7, 25, 54, 0.06);
+}
+
+.warm-note,
+.special-note {
+  color: rgba(111, 96, 72, 0.94) !important;
+}
+
+/* =========================================================
+   14. PILLS DESTACADAS
+========================================================= */
+
+.highlight-pill {
+  -webkit-backdrop-filter: blur(7px);
+  backdrop-filter: blur(7px);
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.62),
+      rgba(255, 248, 234, 0.76)
+    ) !important;
+  border-color: rgba(201, 155, 69, 0.44) !important;
+  transition:
+    transform 240ms ease,
+    background 240ms ease,
+    box-shadow 240ms ease;
+}
+
+.highlight-pill:hover {
+  transform: translateY(-2px);
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.82),
+      rgba(255, 248, 234, 0.94)
+    ) !important;
+  box-shadow: 0 10px 18px rgba(7, 25, 54, 0.08);
+}
+
+/* =========================================================
+   15. PANEL DE LOGRO
+========================================================= */
+
+.achievement-panel {
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(255, 255, 255, 0.86),
+      transparent 42%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(255, 253, 247, 0.72),
+      rgba(255, 248, 234, 0.90)
+    ) !important;
+  border-color: rgba(201, 155, 69, 0.52) !important;
+  box-shadow:
+    inset 0 0 0 5px rgba(201, 155, 69, 0.05),
+    0 18px 36px rgba(7, 25, 54, 0.10) !important;
+}
+
+.achievement-header {
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.72);
+}
+
+.achievement-copy {
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.50);
+}
+
+/* =========================================================
+   16. UBICACIÓN
+========================================================= */
+
+.location-card {
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border-color: rgba(201, 155, 69, 0.82) !important;
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(255, 255, 255, 0.88),
+      transparent 38%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(255, 253, 247, 0.80),
+      rgba(255, 248, 234, 0.92)
+    ) !important;
+  box-shadow:
+    inset 0 0 0 6px rgba(201, 155, 69, 0.08),
+    0 22px 44px rgba(7, 25, 54, 0.13) !important;
+}
+
+.location-card::before {
+  border-color: rgba(201, 155, 69, 0.38) !important;
+}
+
+.location-card::after {
+  text-shadow: var(--lux-shadow-gold);
+}
+
+.location-label {
+  letter-spacing: 0.8px !important;
+  box-shadow:
+    0 14px 26px rgba(7, 25, 54, 0.24),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.08) !important;
+}
+
+.location-icon {
+  position: relative;
+  box-shadow:
+    inset 0 0 0 4px rgba(201, 155, 69, 0.08),
+    0 12px 20px rgba(7, 25, 54, 0.08);
+}
+
+.location-icon::after {
+  content: "";
+  position: absolute;
+  inset: -7px;
+  border-radius: 50%;
+  border: 1px solid rgba(201, 155, 69, 0.30);
+  animation: luxPinPulse 2600ms ease-in-out infinite;
+}
+
+@keyframes luxPinPulse {
+  0%,
+  100% {
+    transform: scale(0.96);
+    opacity: 0.42;
+  }
+
+  50% {
+    transform: scale(1.08);
+    opacity: 0.86;
+  }
+}
+
+/* =========================================================
+   17. BOTONES
+========================================================= */
+
+.btn,
+.button,
+.premium-mini-action {
+  position: relative;
+  isolation: isolate;
+}
+
+.btn.primary,
+.button.maps,
+.button.primary {
+  background:
+    radial-gradient(
+      circle at 30% 0%,
+      rgba(255, 255, 255, 0.17),
+      transparent 34%
+    ),
+    linear-gradient(
+      135deg,
+      var(--lux-navy-1000),
+      var(--lux-navy-700)
+    ) !important;
+}
+
+.btn.secondary,
+.button.whatsapp,
+.button.secondary {
+  background:
+    linear-gradient(
+      135deg,
+      #fff8d8,
+      var(--lux-gold-300) 48%,
+      var(--lux-gold-500)
+    ) !important;
+}
+
+.btn.ghost,
+.button.ghost {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.70),
+      rgba(255, 248, 234, 0.72)
+    ) !important;
+}
+
+.btn,
+.button {
+  box-shadow:
+    0 12px 24px rgba(7, 25, 54, 0.11),
+    inset 0 1px 0 rgba(255, 255, 255, 0.20);
+}
+
+.btn:hover,
+.button:hover {
+  transform: translateY(-4px) !important;
+  box-shadow:
+    0 18px 30px rgba(7, 25, 54, 0.17),
+    inset 0 1px 0 rgba(255, 255, 255, 0.24) !important;
+}
+
+/* =========================================================
+   18. RSVP
+========================================================= */
+
+.rsvp,
+.rsvp-card {
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  border-color: rgba(201, 155, 69, 0.58) !important;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.66),
+      rgba(255, 248, 234, 0.78)
+    ) !important;
+  box-shadow:
+    inset 0 0 0 4px rgba(201, 155, 69, 0.05),
+    0 14px 26px rgba(7, 25, 54, 0.08) !important;
+}
+
+.rsvp-icon,
+.rsvp .icon {
+  box-shadow:
+    0 0 0 5px rgba(201, 155, 69, 0.09),
+    0 0 24px rgba(201, 155, 69, 0.20) !important;
+}
+
+.rsvp strong,
+.rsvp-card strong {
+  letter-spacing: 1px;
+}
+
+/* =========================================================
+   19. VISUALES DE GRADUACIÓN
+========================================================= */
+
+.graduation-visual {
+  filter:
+    drop-shadow(0 18px 22px rgba(7, 25, 54, 0.15))
+    drop-shadow(0 0 18px rgba(201, 155, 69, 0.08));
+}
+
+.cap,
+.extra-cap-top {
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.10),
+    inset 0 -12px 18px rgba(0, 0, 0, 0.16);
+}
+
+.cap::before,
+.extra-cap-top::before {
+  content: "";
+  position: absolute;
+  inset: 14px 20px;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.13),
+      transparent 55%
+    );
+  clip-path: inherit;
+  pointer-events: none;
+}
+
+.tassel,
+.extra-cap-tassel {
+  filter:
+    drop-shadow(0 6px 8px rgba(0, 0, 0, 0.18))
+    drop-shadow(0 0 10px rgba(244, 216, 146, 0.24));
+}
+
+.academic-gown {
+  opacity: 0.98;
+}
+
+.gown-body {
+  box-shadow:
+    inset 0 0 0 2px rgba(255, 255, 255, 0.04),
+    inset 16px 0 34px rgba(255, 255, 255, 0.04),
+    inset -20px -38px 52px rgba(0, 0, 0, 0.20) !important;
+}
+
+.gown-collar {
+  filter:
+    drop-shadow(0 6px 10px rgba(7, 25, 54, 0.13))
+    drop-shadow(0 0 10px rgba(244, 216, 146, 0.18));
+}
+
+.diploma-front,
+.diploma-back,
+.diploma {
+  filter:
+    drop-shadow(0 12px 16px rgba(7, 25, 54, 0.10))
+    drop-shadow(0 0 10px rgba(201, 155, 69, 0.08));
+}
+
+.seal,
+.mini-medal .medal {
+  box-shadow:
+    inset 0 0 0 4px rgba(255, 255, 255, 0.25),
+    0 14px 18px rgba(0, 0, 0, 0.16),
+    0 0 20px rgba(216, 173, 85, 0.18) !important;
+}
+
+/* =========================================================
+   20. VISUALES DE CUMPLEAÑOS
+========================================================= */
+
+.party-visual {
+  filter:
+    drop-shadow(0 18px 22px rgba(7, 25, 54, 0.12))
+    drop-shadow(0 0 16px rgba(201, 155, 69, 0.08));
+}
+
+.balloon {
+  transition: transform 600ms ease;
+}
+
+.party-visual:hover .balloon.navy {
+  transform: translateY(-5px) rotate(-2deg);
+}
+
+.party-visual:hover .balloon.gold {
+  transform: translateY(-7px) rotate(2deg);
+}
+
+.party-visual:hover .balloon.clear {
+  transform: translateY(-4px) rotate(1deg);
+}
+
+.candle::before {
+  animation:
+    flame 1.8s ease-in-out infinite,
+    luxFlameGlow 1600ms ease-in-out infinite !important;
+}
+
+@keyframes luxFlameGlow {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 8px rgba(255, 209, 90, 0.65));
+  }
+
+  50% {
+    filter: drop-shadow(0 0 14px rgba(255, 209, 90, 0.92));
+  }
+}
+
+/* =========================================================
+   21. FÚTBOL SUTIL
+========================================================= */
+
+.soccer-medal {
+  transition:
+    transform 260ms ease,
+    filter 260ms ease;
+}
+
+.soccer-medal:hover {
+  transform: translateY(-4px) scale(1.03);
+  filter:
+    drop-shadow(0 12px 18px rgba(7, 25, 54, 0.16))
+    drop-shadow(0 0 16px rgba(201, 155, 69, 0.20));
+}
+
+.soccer-ball {
+  box-shadow:
+    inset -7px -8px 12px rgba(0, 0, 0, 0.12),
+    inset 5px 5px 12px rgba(255, 255, 255, 0.34) !important;
+}
+
+.jersey {
+  filter:
+    drop-shadow(0 14px 18px rgba(7, 25, 54, 0.16))
+    drop-shadow(0 0 14px rgba(201, 155, 69, 0.10));
+}
+
+/* =========================================================
+   22. HOJAS DORADAS
+========================================================= */
+
+.side-leaves {
+  filter:
+    drop-shadow(0 10px 14px rgba(7, 25, 54, 0.10))
+    drop-shadow(0 0 14px rgba(201, 155, 69, 0.10));
+}
+
+.leaf {
+  background:
+    linear-gradient(
+      135deg,
+      #fff5c8,
+      var(--lux-gold-500) 62%,
+      var(--lux-gold-800)
+    ) !important;
+}
+
+/* =========================================================
+   23. EFECTOS GENERALES
+========================================================= */
+
+.spark {
+  box-shadow:
+    0 0 14px rgba(216, 173, 85, 0.88),
+    0 0 30px rgba(255, 255, 255, 0.55) !important;
+}
+
+.confetti {
+  box-shadow: 0 0 10px rgba(244, 216, 146, 0.26);
+}
+
+.card-foil {
+  opacity: 0.28 !important;
+}
+
+.gold-noise {
+  opacity: 0.26 !important;
+}
+
+.paper-grain {
+  opacity: 0.20 !important;
+}
+
+/* =========================================================
+   24. MODAL Y JS PREMIUM
+========================================================= */
+
+.premium-modal__panel {
+  border-radius: 30px !important;
+  background:
+    radial-gradient(
+      circle at top,
+      rgba(255, 255, 255, 0.98),
+      transparent 36%
+    ),
+    linear-gradient(
+      180deg,
+      var(--lux-cream-50),
+      var(--lux-cream-200)
+    ) !important;
+}
+
+.premium-mini-action {
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+}
+
+.premium-countdown__item {
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+}
+
+/* =========================================================
+   25. TOOLBAR FLOTANTE
+========================================================= */
+
+.toolbar {
+  filter:
+    drop-shadow(0 18px 28px rgba(0, 0, 0, 0.24))
+    drop-shadow(0 0 16px rgba(201, 155, 69, 0.08));
+}
+
+.toolbar a,
+.toolbar button {
+  border-color: rgba(201, 155, 69, 0.72) !important;
+  background:
+    radial-gradient(
+      circle at 32% 0%,
+      rgba(255, 255, 255, 0.14),
+      transparent 34%
+    ),
+    linear-gradient(
+      135deg,
+      var(--lux-navy-1000),
+      var(--lux-navy-700)
+    ) !important;
+}
+
+/* =========================================================
+   26. SELECCIÓN DE TEXTO
+========================================================= */
+
+::selection {
+  color: var(--lux-navy-1000);
+  background: var(--lux-gold-300);
+}
+
+/* =========================================================
+   27. SCROLLBAR
+========================================================= */
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--lux-gold-600) var(--lux-navy-950);
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--lux-navy-950);
+}
+
+::-webkit-scrollbar-thumb {
+  border: 3px solid var(--lux-navy-950);
+  border-radius: 999px;
+  background:
+    linear-gradient(
+      180deg,
+      var(--lux-gold-300),
+      var(--lux-gold-700)
+    );
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background:
+    linear-gradient(
+      180deg,
+      var(--lux-gold-200),
+      var(--lux-gold-600)
+    );
+}
+
+/* =========================================================
+   28. RESPONSIVE PREMIUM
+========================================================= */
+
+@media (max-width: 1020px) {
+  .invitation > .content::before,
+  .invitation > .content::after,
+  .invite-card > .main-content::before,
+  .invite-card > .main-content::after {
+    opacity: 0.30;
+  }
+
+  .stage::before {
+    inset: -16px;
+  }
+}
+
+@media (max-width: 720px) {
+  .page {
+    padding: 14px 8px;
+  }
+
+  .stage::before,
+  .stage::after {
+    display: none;
+  }
+
+  .invitation,
+  .invite-card {
+    border-radius: 26px !important;
+    box-shadow:
+      0 20px 55px rgba(0, 0, 0, 0.38),
+      inset 0 0 0 6px rgba(201, 155, 69, 0.12) !important;
+  }
+
+  .invitation > .content::before,
+  .invitation > .content::after,
+  .invite-card > .main-content::before,
+  .invite-card > .main-content::after {
+    display: none;
+  }
+
+  .headline::after {
+    width: 72%;
+  }
+
+  .name-kicker {
+    width: auto;
+  }
+
+  .detail-card:hover,
+  .detail-chip:hover,
+  .btn:hover,
+  .button:hover,
+  .highlight-pill:hover {
+    transform: none !important;
+  }
+
+  .location-card {
+    border-radius: 24px !important;
+  }
+
+  .rsvp,
+  .rsvp-card {
+    border-radius: 24px !important;
+  }
+
+  .premium-countdown {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 440px) {
+  .invitation,
+  .invite-card {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  .main-title .grad,
+  .title-word.grad {
+    line-height: 0.82;
+  }
+
+  .highlight-pill {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* =========================================================
+   29. PRINT / PDF
+========================================================= */
+
+@media print {
+  html,
+  body {
+    background: white !important;
+  }
+
+  .page {
+    background: white !important;
+  }
+
+  .page::before,
+  .page::after,
+  .stage::before,
+  .stage::after,
+  .premium-cursor-glow,
+  .premium-particle-canvas,
+  .premium-progress,
+  .toolbar,
+  .outside-note {
+    display: none !important;
+  }
+
+  .invitation,
+  .invite-card {
+    box-shadow: none !important;
+    border-radius: 0 !important;
+  }
+
+  .detail-card,
+  .detail-chip,
+  .location-card,
+  .achievement-panel,
+  .rsvp,
+  .rsvp-card {
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+  }
+}
+
+/* =========================================================
+   30. REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 1ms !important;
+  }
+}
+
+/* =========================================================
+   31. FALLBACKS
+========================================================= */
+
+@supports not ((-webkit-backdrop-filter: blur(8px)) or (backdrop-filter: blur(8px))) {
+  .detail-card,
+  .detail-chip,
+  .location-card,
+  .achievement-panel,
+  .rsvp,
+  .rsvp-card,
+  .premium-mini-action,
+  .premium-countdown__item {
+    background: rgba(255, 248, 234, 0.94) !important;
+  }
+}
+
+/* =========================================================
+   32. CLASES OPCIONALES POR SI QUIERES AÑADIRLAS LUEGO
+========================================================= */
+
+.lux-hide {
+  display: none !important;
+}
+
+.lux-soft-glow {
+  box-shadow:
+    0 0 0 1px rgba(201, 155, 69, 0.22),
+    0 0 28px rgba(216, 173, 85, 0.28) !important;
+}
+
+.lux-gold-text {
+  background:
+    linear-gradient(
+      180deg,
+      var(--lux-gold-900),
+      var(--lux-gold-400),
+      var(--lux-gold-900)
+    );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent !important;
+}
+
+.lux-navy-text {
+  color: var(--lux-navy-850) !important;
+}
+
+.lux-glass {
+  -webkit-backdrop-filter: blur(9px);
+  backdrop-filter: blur(9px);
+  background: rgba(255, 248, 234, 0.70) !important;
+  border: 1px solid rgba(201, 155, 69, 0.42) !important;
+}
